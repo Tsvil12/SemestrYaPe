@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переводчик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="welcomePage" class="container">
+        <h1>Добро пожаловать!</h1>
+        <p>Введите ваше имя:</p>
+        <input type="text" id="userName" placeholder="Ваше имя">
+        <button id="nextButton">Далее</button>
+    </div>
+
+    <div id="mainPage" class="container" style="display: none;">
+        <div id="greeting-panel" class="panel">
+            <h1>Привет, <span id="userGreeting"></span>!</h1>
+        </div>
+
+        <div class="panels-row">
+            <div id="drawing-panel" class="panel">
+                <h2>Рисунок</h2>
+                <canvas id="myCanvas" width="400" height="300"></canvas>
+                <br>
+                    <button id="loadImageButton">Скачать</button>
+                    <button id="clearButton">Очистить</button>
+                </br>
+            </div>
+
+            <div id="input-panel" class="panel">
+                <h2>Ввод текста</h2>
+                <input type="text" id="wordInput" placeholder="Введите слово">
+                <button id="translateButton">Перевести</button>
+                <br>
+                <input type="file" id="fileInput" accept=".txt">
+                <button id="loadFileButton">Загрузить</button>
+                </br>
+                <br>
+                <label for="languageSwitch">Язык</label>
+                <select id="languageSwitch">
+                    <option value="en|ru">Английский</option>
+                    <option value="ru|en">Русский</option>
+                </select>
+                <label for="languageSwitch">Порядок слов</label>
+                <input id="translationOrder" type="checkbox">
+                </br>
+                </input>
+                <h2>Распознавание текста</h2>
+                <input type="text" id="linkInput" placeholder="Ссылка на изображение">
+                <select id="fileFormat">
+                    <option value="PNG">png</option>
+                    <option value="JPG">jpg</option>
+                </select>
+                <button id="recognizeButton">Распознать</button>
+                <label for="languageSwitch2">Распознаваемый язык</label>
+                <select id="languageSwitch2">
+                    <option value="eng">Английский</option>
+                    <option value="rus">Русский</option>
+                </select>
+                <br>
+                <p id="recognizedText"></p>
+                </br>
+            </div>
+
+            <div id="history-panel" class="panel">
+                <h2>История перевода</h2>
+                <table id="myTable" align="center">
+                    <tr>
+                        <th>Слово</th>
+                        <th>Перевод</th>
+                    </tr>
+                </table>
+                <br>
+                <label for="sortCheckbox">Сортировка</label>
+                <input type="checkbox" id="sortCheckbox">
+                <button id="downloadButton">Скачать CSV</button>
+                <button id="clearHistoryButton">Очистить историю</button>
+                </br>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="welcome.js"></script>
+
+    <script type="module" src="/classes/translator.js"></script>
+    <script type="module" src="/classes/table.js"></script>
+    <script type="module" src="/classes/text_recognition.js"></script>
+    <script type="module" src="/classes/drawing.js"></script>
+
+    <script type="module" src="main_translator.js"></script>
+    <script type="module" src="main_history.js"></script>
+    <script type="module" src="main_text_recognition.js"></script>
+    <script type="module" src="main_drawing.js"></script>
+
+</body>
+</html>
