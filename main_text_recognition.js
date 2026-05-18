@@ -1,4 +1,4 @@
-import { TextRecognizer } from "/classes/text_recognition.js";
+import { TextRecognizer } from "./classes/text_recognition.js";
 
 let recognizer = new TextRecognizer()
 

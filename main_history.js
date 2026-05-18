@@ -1,4 +1,4 @@
-import { Table } from "/classes/table.js";
+import { Table } from "./classes/table.js";
 
 export const myTable = new Table('myTable', 5);
 const sortCheckbox = document.getElementById('sortCheckbox');

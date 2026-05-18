@@ -1,4 +1,4 @@
-import { Translator } from "/classes/translator.js";
+import { Translator } from "./classes/translator.js";
 import { myTable } from "./main_history.js";
 
 const languageSwitch = document.getElementById('languageSwitch');
